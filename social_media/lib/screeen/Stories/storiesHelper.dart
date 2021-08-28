@@ -97,7 +97,7 @@ class StoriesHelper with ChangeNotifier {
 
   Future addSeenStamp(BuildContext context, String storyId, String personId,
       DocumentSnapshot snapshot) async {
-    if (snapshot['useruid'] ==
+    if (snapshot['useruid'] !=
         Provider.of<Authentication>(context, listen: false).userUid) {
       return FirebaseFirestore.instance
           .collection('stories')
