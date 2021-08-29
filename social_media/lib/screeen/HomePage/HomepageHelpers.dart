@@ -2,7 +2,9 @@ import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:social_media/constants/Constantcolors.dart';
+import 'package:social_media/services/FirebaseOperation.dart';
 
 class HomepageHelpers with ChangeNotifier {
   ConstantColors constantColors = ConstantColors();
@@ -25,10 +27,10 @@ class HomepageHelpers with ChangeNotifier {
       items: [
         CustomNavigationBarItem(icon: Icon(EvaIcons.home)),
         CustomNavigationBarItem(icon: Icon(Icons.message_rounded)),
-        CustomNavigationBarItem(icon: Icon(Icons.face,
-              // radius: 35, backgroundColor: constantColors.blueGreyColor,
-              // backgroundImage: NetworkImage(
-              //   Provider.of<FirebaseOperation>(context,listen: false).initUserImage),
+        CustomNavigationBarItem(icon: CircleAvatar(
+              radius: 35, backgroundColor: constantColors.blueGreyColor,
+              backgroundImage: NetworkImage(
+                Provider.of<FirebaseOperation>(context,listen: false).initUserImage),
 
               ),
         )

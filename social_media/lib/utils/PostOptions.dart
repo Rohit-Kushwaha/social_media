@@ -592,6 +592,7 @@ class PostFunctions with ChangeNotifier {
         builder: (context) {
           return Container(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 150),
@@ -622,7 +623,7 @@ class PostFunctions with ChangeNotifier {
                   width: MediaQuery.of(context).size.width,
                   child: StreamBuilder<QuerySnapshot>(
                     stream: FirebaseFirestore.instance
-                        .collection('awards')
+                        .collection('award')
                         .snapshots(),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {

@@ -247,7 +247,7 @@ return ListView(
                   Container(
                     width: MediaQuery.of(context).size.width * .15,
                     height: MediaQuery.of(context).size.height * .05,
-                    color: constantColors.redColor,
+                    // color: constantColors.redColor,
                     child: StreamBuilder<QuerySnapshot>(
                       stream: FirebaseFirestore.instance.collection('posts')
                           .doc(documentSnapshot['caption']).collection('awards').snapshots(),
@@ -263,7 +263,7 @@ return ListView(
                              return Container(
                                width: 30.0,
                                height: 30.0,
-                               child: Image.network(documentSnapshot['award']),
+                               child: Image.network(documentSnapshot['awards']),
                              );
                             }).toList(),
                           );
